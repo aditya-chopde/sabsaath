@@ -7,7 +7,7 @@ SabSaath is a web application designed to provide a seamless experience for user
 - **User Registration**: Allows new users to sign up.
 - **User Login**: Authenticates existing users.
 - **Create Posts**: Enables logged-in users to create new posts.
-- **Delete Posts**: Allows users to delete their own posts.
+
 
 ## Getting Started
 

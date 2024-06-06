@@ -1,0 +1,1 @@
+This web app is created with the purpose of understanding and implementing the CRUD operations in the MongoDB database. I have also added a user-interface to intereact with the backend, I use EJS Template engine and Bootstrap for the frontend.

@@ -28,14 +28,10 @@
           <li class="nav-item">
             <a class="nav-link active" href="/contact">Contact us</a>
           </li>
-          <li>
-            <a class="btn btn-primary" href="/auth/signup">Sign up</a>
-          </li>
-          <li>
-            <a class="btn btn-success mx-3" href="/auth/login">Logout</a>
-          </li>
-        </ul>
-      </div>
+          </ul>
+          </div>
+              <a class="btn btn-primary" href="/auth/signup">Sign up</a>
+              <a class="btn btn-success mx-3" href="/auth/login">Logout</a>
       <div>
       </div>
     </div>
@@ -59,7 +55,7 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Create a New Post</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <form class="modal-body" method="post" action="/user/create">
+          <form class="modal-body" method="post" action="/post/create">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Title</span>
               <input type="text" class="form-control" placeholder="Post Title" aria-label="Username"
@@ -83,7 +79,7 @@
   <!-- Posts -->
   <div class="container">
     <h1 class="my-3">Posts</h1>
-    <div class="d-flex flex-row flex-wrap container">
+    <div class="d-flex flex-row flex-wrap">
       <% posts.forEach(post=> { %>
         <div class="card mx-3 p-2 my-2" style="width: 18rem;">
           <h1>

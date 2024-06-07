@@ -5,7 +5,6 @@ const path = require("path");
 const { connectDb } = require("./connect");
 const PORT = 3000;
 const { restrictToLogedInUserOnly, checkAuth } = require("./middlewares/auth")
-const { setUser } = require("./service/auth");
 const { name } = require("ejs");
 const auth = require("./routes/auth")
 const admin = require("./routes/admin")

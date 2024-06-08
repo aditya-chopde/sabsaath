@@ -8,7 +8,7 @@ const { restrictToLogedInUserOnly, checkAuth } = require("./middlewares/auth")
 const { name } = require("ejs");
 const auth = require("./routes/auth")
 const admin = require("./routes/admin")
-const posts = require("./routes/posts")
+const posts = require("./routes/post")
 const static = require("./routes/static")
 
 //Connect DB

@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const { post } = require("../models/post");
 const { user } = require("../models/user");
 const { setUser } = require("../service/auth");
+const { isLoggedIn } = require("../controller/login");
 const router = express.Router()
 
 //Rendering the signup page
@@ -15,12 +16,12 @@ router.get("/signup", async (req, res) => {
 //Rendering the login page
 router.get("/login", async (req, res) => {
     res.render("login")
-})
+}, isLoggedIn)
 
 //Logging out the user
 router.get('/logout', async (req, res) => {
     res.cookie("token", "")
-    res.redirect("/login")
+    res.redirect("/auth/login")
 })
 
 //Creating the user
@@ -74,20 +75,6 @@ router.post("/login", async (req, res) => {
 
 
 //Rendering the user profile home page
-router.get("/user", async (req, res) => {
-    const verify = jwt.verify(req.cookies.token, secret_key)
-    const findUser = await user.findOne({
-        email: verify.email
-    })
-
-    const findPosts = await post.find({
-        createdBy: findUser._id
-    })
-
-    res.render("home", {
-        name: findUser.name,
-        posts: findPosts
-    })
-})
+router.get("/user", isLoggedIn)
 
 module.exports = router;

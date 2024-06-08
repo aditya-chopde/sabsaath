@@ -18,7 +18,7 @@ router.post("/create", async (req, res) => {
         title: title,
         description: description,
         createdBy: findUser._id,
-        name: findUser.name
+        userName: findUser.name
     })
 
     res.send({ msg: "post created" })

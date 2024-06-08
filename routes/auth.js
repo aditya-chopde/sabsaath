@@ -14,7 +14,24 @@ router.get("/signup", async (req, res) => {
 
 //Rendering the login page
 router.get("/login", async (req, res) => {
-    res.render("login")
+    const token_cookies = req.cookies.token
+    if(token_cookies==""){
+        res.render("login")
+    }else{
+        const verify = jwt.verify(token_cookies, secret_key)
+        const findUser = await user.findOne({
+            email: verify.email
+        })
+    
+        const findPosts = await post.find({
+            createdBy: findUser._id
+        })
+    
+        res.render("home", {
+            name: findUser.name,
+            posts: findPosts
+        })
+    }
 })
 
 //Logging out the user

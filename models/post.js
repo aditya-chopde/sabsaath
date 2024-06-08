@@ -14,10 +14,6 @@ const postSchema = new mongoose.Schema({
         ref: 'users',
         required: true,
     },
-    name: {
-        type: String,
-        required: true
-    },
 }, {
     timestamps: true
 })
